@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myJs</title>
+  </head>
+  <body>
+    <div id="div"></div>
+    <script>
+      let hello = new String('Hello')
+      let re = hello.concat(' Javascript')
+
+      let text = hello + '<br>'
+      text += re + '<br>'
+      text += 'charAt() : ' + hello.charAt(0) + '<br>'
+      text += 'charCodeAt() : ' + hello.charCodeAt(0) + '<br>'
+      text += 'split() : ' + re.split(' ') + '<br>'
+
+      let div = document.getElementById('div')
+      div.innerHTML = text
+    </script>
+  </body>
+</html>
