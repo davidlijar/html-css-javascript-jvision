@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>new Object()로 사용자 객체 만들기</title>
+  </head>
+  <body>
+    <script>
+      let account = new Object()
+      account.owner = 'Ohn Nge'
+      account.balance = 10000
+      account.code = '310'
+      account.inquiry = inquiry
+      account.deposit = deposit
+      account.withdraw = withdraw
+
+      function inquiry() {
+        return this.balance
+      }
+      function deposit(money) {
+        this.balance += money
+      }
+      function withdraw(money) {
+        this.balance -= money
+        return money
+      }
+
+      document.write('Inquiry : ' + account.inquiry() + '<br>')
+      account.deposit(5000)
+      document.write('Inquiry : ' + account.inquiry() + '<br>')
+      account.withdraw(2000)
+      document.write('Inquiry : ' + account.inquiry() + '<br>')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로토타임으로 객체 만들기</title>
+  </head>
+  <body>
+    <h3>Account 프로토타입 만들기</h3>
+    <hr />
+
+    <script>
+      function Account(owner, code, balance) {
+        this.owner = owner
+        this.code = code
+        this.balance = balance
+
+        this.inquiry = function () {
+          return this.balance
+        }
+        this.withdraw = function (money) {
+          this.balance -= money
+          return money
+        }
+        this.deposit = function (money) {
+          this.balance += money
+        }
+      }
+
+      let account = new Account('Ohn Mar Khaing', '310', 50000)
+
+      document.write('balance : ' + account.inquiry() + '<br>')
+      account.deposit(5000)
+      document.write('balance : ' + account.inquiry() + '<br>')
+      account.withdraw(400)
+      document.write('balance : ' + account.inquiry() + '<br>')
+    </script>
+  </body>
+</html>
