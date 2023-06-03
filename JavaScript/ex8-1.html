@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 객체 p의 프로퍼티, 스타일, 이벤트 리스너</title>
+  </head>
+  <body>
+    <div>
+      <p
+        id="ptag"
+        style="color: blue;"
+        onclick="this.style.color='teal'"
+        title="p tag"
+      >
+        <span style="color: red;">this is span tag</span>
+        This is p tag
+        <span></span>
+        <span></span>
+      </p>
+    </div>
+    <div id="div"></div>
+
+    <script>
+      let p = document.getElementById('ptag')
+      let div = document.getElementById('div')
+      let text = 'p.id = ' + p.id + '<br>'
+      text += 'p.tagName = ' + p.tagName + '<br>'
+
+      text += 'p.innerHTML = ' + p.innerHTMLl + '<br>'
+      text += 'p.color = ' + p.style.color + '<br>'
+      text += 'p.childElementCount = ' + p.childElementCount + '<br>'
+      text += 'p.onclick = ' + p.onclick + '<br>'
+      text += 'p.offsetWidth = ' + p.offsetWidth + '<br>'
+      text += 'p.offsetHeight = ' + p.offsetHeight + '<br>'
+      text += 'p.title = ' + p.title + '<br>'
+      text += 'p.parentElement = ' + p.parentElement + '<br>'
+
+      div.innerHTML = text
+    </script>
+  </body>
+</html>
