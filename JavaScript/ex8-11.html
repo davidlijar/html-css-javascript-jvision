@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서의 동적 구성</title>
+  </head>
+  <body id="parent">
+    <h3>DIV 객체를 동적으로 생성, 삽입, 삭제하는 예제</h3>
+    <hr />
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, quisquam
+      tenetur, vero facere alias temporibus voluptatem tempora ullam quaerat
+      aliquam id qui et a nulla deserunt rerum doloribus sapiente suscipit?
+    </p>
+    <a href="javascript:createDiv()">DIV 생성</a>
+
+    <script>
+      function createDiv() {
+        let obj = document.getElementById('parent')
+        let newDiv = document.createElement('div')
+        newDiv.innerHTML = 'new div'
+        newDiv.setAttribute('id', 'myDiv')
+        newDiv.style.backgroundColor = 'yellow'
+        newDiv.addEventListener('click', function () {
+          let p = this.parentElement
+          p.removeChild(this)
+        })
+
+        obj.appendChild(newDiv)
+      }
+    </script>
+  </body>
+</html>
