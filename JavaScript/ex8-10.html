@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML문서 작성기 만들기</title>
+  </head>
+  <body>
+    <h3>Below is a mini HTML text editor</h3>
+    <hr />
+    <textarea name="textEditor" id="editor" cols="30" rows="10"></textarea>
+    <br />
+    <br />
+    <button onclick="run()">To Run</button>
+
+    <script>
+      function run() {
+        //not necessary
+        /*
+            let win = null;
+            if(win == nul || win.closed){
+                win =window.open("","outWin","width=300,height=200");
+            }
+        */
+
+        let html = document.getElementById('editor')
+
+        let win = window.open('', 'outWin', 'width=300,height=200')
+        win.document.open()
+        win.document.write(html.value)
+        win.document.close()
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document.getElementsByTagName()</title>
+  </head>
+  <body>
+    <h3>
+      내가 좋아하는 과일
+      <button onclick="change()">누르세요</button>
+    </h3>
+    <hr />
+    <p>
+      Lorem ipsum dolor,
+      <span>apple</span>
+      sit amet consectetur adipisicing
+      <span>orange</span>
+      elit. Omnis, deserunt. Rem, alias provident. Minus neque ratione
+      necessitatib
+      <span>banana</span>
+      us veniam itaque accusantium rem explicabo provident numquam, dolore est
+      consectetur, voluptatem dolorem harum.
+    </p>
+
+    <script>
+      function change() {
+        let spanArr = document.getElementsByTagName('span')
+
+        for (let i = 0; i < spanArr.length; i++) {
+          spanArr[i].style.color = 'red'
+          spanArr[i].style.fontSize = '40px'
+        }
+      }
+    </script>
+  </body>
+</html>
