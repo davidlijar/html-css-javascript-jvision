@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 객채ㅔ의 이벤트 리스너 프로퍼티에 함수 등록</title>
+  </head>
+  <body onload="init()">
+    <h3>DOM 객체의 이벤트 리스너 프로퍼티에 합수 등록</h3>
+    <hr />
+    <p
+      id="firstP"
+      onmouseover="this.style.color='red'"
+      onmouseout="this.style.color='black'"
+    >
+      마우스 올리면 rochid 색으로 변경 (through inline Tag)
+    </p>
+    <p id="secondP">Try to mouse over (through DOM)</p>
+    <p id="thirdP">Try to mouse over (through addEventListener)</p>
+
+    <script>
+      function init() {
+        let secondP = document.getElementById('secondP')
+        let thirdP = document.getElementById('thirdP')
+
+        secondP.onmouseover = over
+        secondP.onmouseout = out
+
+        thirdP.addEventListener('mouseover', over)
+        thirdP.addEventListener('mouseout', out)
+      }
+
+      function over() {
+        this.style.backgroundColor = 'red'
+      }
+      function out() {
+        this.style.backgroundColor = 'white'
+      }
+    </script>
+  </body>
+</html>
