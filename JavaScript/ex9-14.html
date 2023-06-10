@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onload로 미니지 크기 출력</title>
+  </head>
+  <body>
+    <h3>onload로 이미지 키기 출력</h3>
+    <hr />
+    <form action="#">
+      <select name="#" id="sel" onchange="change()">
+        <option value="media/mango.jpg">mango</option>
+        <option value="media/apple.jpg">apple</option>
+        <option value="media/banana.jpg">banana</option>
+      </select>
+      <span id="mySpan">image size</span>
+    </form>
+    <img src="media/mango.jpg" alt="." id="img" />
+
+    <script>
+      function change() {
+        let img = document.getElementById('img')
+        let span = document.getElementById('mySpan')
+        let sel = document.getElementById('sel')
+
+        img.onload = function () {
+          span.innerHTML = img.width + 'x' + img.height
+        }
+
+        let index = sel.selectedIndex
+        img.src = sel.options[index].value
+      }
+    </script>
+  </body>
+</html>

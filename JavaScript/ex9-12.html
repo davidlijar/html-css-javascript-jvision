@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oncontextmenu</title>
+  </head>
+  <body>
+    <h3>oncontextmenu에서 컨텟스트 메뉴 금지</h3>
+    <hr />
+    <img src="media/banana.jpg" alt="banana" />
+
+    <script>
+      function hideMenu() {
+        alert('오른쪽 클릭<컨텟스트 메뉴>금지')
+        return false
+      }
+      document.oncontextmenu = hideMenu
+    </script>
+  </body>
+</html>
